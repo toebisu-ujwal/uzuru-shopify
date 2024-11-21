@@ -1,0 +1,10 @@
+{%- liquid
+    assign raven_api_secret = shop.metafields.fields_raven.api_secret
+    assign raven_digest_string = raven_id | append: resource_id
+    assign raven_mac = raven_digest_string | hmac_sha256: raven_api_secret
+  -%}
+  {
+    raven_id: '{{ raven_id }}',
+    resource_id: '{{ resource_id }}',
+    raven_mac: '{{ raven_mac }}'
+  }

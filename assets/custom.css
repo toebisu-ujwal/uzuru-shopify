@@ -1,0 +1,23 @@
+.see-more-container {
+    display: flex;
+}
+
+.see-more-button {
+    margin: 0 auto;
+    width: 20%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fade-in:not(.fade-in) {
+    opacity: 1;
+  }
+
+  .pagination {
+    display: none;
+  }

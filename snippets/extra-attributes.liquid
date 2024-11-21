@@ -1,0 +1,59 @@
+{% comment %}
+  Renders facets (filtering and sorting)
+
+  Accepts:
+  - results: {Object} Collection or Search object
+  - enable_filtering: {Boolean} Show filtering when true
+  - enable_sorting: {Boolean} Show sorting when true
+  - filter_type: {String} Type of filter
+  - paginate: {Object}
+
+  Usage:
+  {% render 'extra-attributes' %}
+{% endcomment %}
+<fieldset class="tw-mt-8">
+  <legend class="tw-block tw-text-2xl tw-text-left tw-font-medium tw-text-gray-900 tw-mb-4">What are you interested in?</legend>
+  <div class="tw-space-y-4 sm:tw-flex sm:tw-items-center sm:tw-space-y-0 sm:tw-space-x-10">
+    <input type="date" id="start" name="customer-dob" x-model="custtomAttributes.mostImportantDate" class="focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-relative tw-block tw-w-full tw-rounded tw-rounded-md tw-bg-transparent focus:tw-z-10 sm:tw-text-xl tw-border-gray-300">
+  </div>
+</fieldset>
+
+<fieldset class="tw-mt-8">
+  <legend class="tw-block tw-text-2xl tw-text-left tw-font-medium tw-text-gray-900 tw-mb-4">What are you interested in?</legend>
+  <div class="tw-space-y-4 sm:tw-flex sm:tw-items-center sm:tw-space-y-0 sm:tw-space-x-10">
+    <div class="tw-flex tw-items-center">
+      <input x-model="customerAttrs.sidedish" value="HTML" id="html" name="customer-intrest" type="radio" checked class="focus:tw-ring-indigo-500 tw-h-4 tw-w-4 tw-text-indigo-600 border-gray-300" x-model="custtomAttributes.intrest">
+      <label for="sidedish-none" class="tw-ml-3 tw-block tw-text-xl tw-font-medium tw-text-gray-700"> HTML </label>
+    </div>
+
+    <div class="tw-flex tw-items-center">
+      <input x-model="customerAttrs.sidedish" value="CSS" id="css" name="customer-intrest" type="radio" checked class="focus:tw-ring-indigo-500 tw-h-4 tw-w-4 tw-text-indigo-600 border-gray-300" x-model="custtomAttributes.intrest">
+      <label for="sidedish-none" class="tw-ml-3 tw-block tw-text-xl tw-font-medium tw-text-gray-700"> CSS </label>
+    </div>
+
+    <div class="tw-flex tw-items-center">
+      <input x-model="customerAttrs.sidedish" value="JavaScript" id="javascript" name="customer-intrest" type="radio" checked class="focus:tw-ring-indigo-500 tw-h-4 tw-w-4 tw-text-indigo-600 border-gray-300" x-model="custtomAttributes.intrest">
+      <label for="sidedish-none" class="tw-ml-3 tw-block tw-text-xl tw-font-medium tw-text-gray-700"> JavaScript </label>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="tw-mt-8">
+  <legend class="tw-block tw-text-2xl tw-text-left tw-font-medium tw-text-gray-900 tw-mb-4">Would you like to receive updates?</legend>
+  <div class="tw-relative tw-flex tw-items-start">
+    <div class="tw-flex tw-items-center tw-h-6">
+      <input id="updates_email" name="updates_email" type="checkbox" class="focus:tw-ring-indigo-500 tw-h-6 tw-w-6 tw-text-indigo-600 tw-border-gray-300 tw-rounded" x-model="custtomAttributes.acceptsEmail" style="width: 1.5rem !important">
+    </div>
+    <div class="tw-ml-3 tw-text-xl">
+      <label for="updates_email" class="tw-font-medium tw-text-gray-700">Email</label>
+    </div>
+  </div>
+  <div class="tw-relative tw-flex tw-items-start">
+    <div class="tw-flex tw-items-center tw-h-6">
+      <input id="updates_sms" name="updates_sms" type="checkbox" class="focus:tw-ring-indigo-500 tw-h-6 tw-w-6 tw-text-indigo-600 tw-border-gray-300 tw-rounded" x-model="custtomAttributes.acceptsSMS" style="width: 1.5rem !important">
+    </div>
+    <div class="tw-ml-3 tw-text-xl">
+      <label for="updates_sms" class="tw-font-medium tw-text-gray-700">SMS</label>
+    </div>
+  </div>
+</fieldset>
